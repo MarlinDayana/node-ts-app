@@ -9,9 +9,12 @@ const app = express();
 
 // setting
 
-app.set('port', 4000)
+app.set('port', process.env.PORT || 3000)
 
 // middlewares
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));
 
 // routes 
 
